@@ -6,7 +6,7 @@ This is an offline simulation, not a flight-tested estimator, PX4 integration, o
 
 ## Original code
 
-`step1_truth.m` is the original completed script, preserved unchanged from the final experiment. Despite its early-stage filename, it includes the trajectory, noisy sensors, accelerometer-only integration, Kalman prediction/correction, dropout handling, plots, and RMSE calculations.
+`step1_truth.m` contains the completed script from the final experiment. The web editor removed its leading blank line; no MATLAB code was changed. A byte-for-byte original is retained in the accompanying portfolio archive. Despite its early-stage filename, it includes the trajectory, noisy sensors, accelerometer-only integration, Kalman prediction/correction, dropout handling, plots, and RMSE calculations.
 
 The checked-in state is intentionally the last experiment: an incorrect 5 m initial height with very small initial covariance. It is not the best-performing baseline configuration.
 
@@ -53,21 +53,9 @@ To reproduce each comparison, keep `rng(1)` and the default Q/R active. Make a c
 4. **Wrong start, high confidence:** `x = [5; 0]; P = 0.0001*eye(2);`, dropout commented. This is the checked-in original.
 5. **Q/R tuning:** the two alternative commented Q/R pairs in the script were used to examine excessive model trust versus excessive sensor trust. Change one pair at a time; keep the baseline pair commented while an alternative is active. No numerical results are claimed here for those tuning variations.
 
-## Plots from the MATLAB runs
+## Plot evidence
 
-The following images are crops of the original MATLAB screenshots: plot plus workspace RMSE values. The desktop, account name, and unrelated state are excluded. No curves or scores were changed.
-
-### Baseline
-![Baseline MATLAB plot and RMSE](baseline.png)
-
-### Missing barometer readings
-![Dropout MATLAB plot and RMSE](dropout.png)
-
-### Wrong 5 m start, ordinary initial covariance
-![Wrong start with P equal to identity](wrong-start-P1.png)
-
-### Wrong 5 m start, very small initial covariance
-![Wrong start with tiny P](wrong-start-tiny-P.png)
+Four cropped MATLAB screenshots accompany the portfolio archive: baseline, barometer dropout, wrong initial height with ordinary covariance, and wrong initial height with very small covariance. Each includes the observed plot and workspace RMSE values, with desktop/account details removed. They are not regenerated simulation pictures. The repository's numerical table records those observations.
 
 ## What the experiments show
 

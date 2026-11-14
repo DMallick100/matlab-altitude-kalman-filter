@@ -1,0 +1,7 @@
+experiment,height_rmse_m,evidence
+barometer_full_readings,0.2866,author_MATLAB_run_2026-11-14
+accelerometer_double_integration,2.8179,author_MATLAB_run_2026-11-14
+baseline_kalman,0.1394,author_MATLAB_run_2026-11-14
+barometer_dropout_kalman,0.1546,author_MATLAB_run_2026-11-14
+wrong_5m_start_P1,0.1415,author_MATLAB_run_2026-11-14
+wrong_5m_start_P1e-4,0.3787,author_MATLAB_run_2026-11-14
